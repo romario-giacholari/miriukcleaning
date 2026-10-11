@@ -257,6 +257,18 @@
         border-radius: 22px 22px 0 0;
       }
 
+      .footer-shell .columns {
+        align-items: center;
+        margin-bottom: 0;
+      }
+
+      .footer-shell .column.has-text-right {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
       @media screen and (max-width: 768px) {
         .hero-box {
           padding: 2rem 1.25rem;
@@ -266,6 +278,22 @@
         .button-secondary {
           width: 100%;
           margin-bottom: 0.75rem;
+        }
+
+        .footer-shell .columns {
+          display: block;
+        }
+
+        .footer-shell .column,
+        .footer-shell .column.has-text-right {
+          display: block !important;
+          width: 100%;
+          text-align: left !important;
+          justify-content: flex-start !important;
+        }
+
+        .footer-shell .column.has-text-right {
+          margin-top: 0.85rem;
         }
       }
     </style>
