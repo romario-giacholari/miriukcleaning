@@ -7,6 +7,9 @@
     <meta name="description" content="Brighton cleaning services for homes, Airbnb properties and commercial spaces. Professional, reliable and affordable cleaning in Brighton, UK.">
     <meta name="author" content="Mirgian Chasanllari">
     <title>Brighton Cleaning Services | Mirgian Chasanllari</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <style>
       :root {
@@ -26,7 +29,7 @@
       }
 
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background: linear-gradient(180deg, #f4f9fb 0%, #edf5f7 100%);
         color: var(--text);
         font-size: 1.05rem;
@@ -36,21 +39,24 @@
       .hero-box {
         background: linear-gradient(135deg, rgba(27, 127, 141, 0.96), rgba(15, 88, 107, 0.96));
         color: var(--white);
-        border-radius: 18px;
-        box-shadow: var(--shadow);
+        border-radius: 22px;
+        box-shadow: 0 20px 40px rgba(19, 65, 77, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        overflow: hidden;
       }
 
       .brand-logo-wrap {
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
         margin-bottom: 1.2rem;
       }
 
       .brand-logo {
         display: block;
-        max-width: 440px;
         width: 100%;
+        max-width: 100%;
         height: auto;
         border-radius: 8px;
         box-shadow: 0 12px 26px rgba(10, 33, 40, 0.2);
@@ -74,11 +80,12 @@
       }
 
       .hero-title {
-        font-family: Georgia, "Times New Roman", serif;
+        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
         font-size: 2.8rem;
         line-height: 1.15;
         color: var(--white);
         font-weight: 800;
+        letter-spacing: -0.04em;
       }
 
       .hero-subtitle {
@@ -88,29 +95,40 @@
         max-width: 42rem;
       }
 
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
       .button-primary {
         background: var(--accent);
         border: none;
         color: var(--text);
-        font-weight: 700;
-        border-radius: 8px;
-        padding: 1.1rem 1.8rem;
+        font-weight: 800;
+        border-radius: 12px;
+        padding: 1.15rem 2rem;
         box-shadow: 0 10px 24px rgba(245, 199, 127, 0.38);
+        min-width: 220px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
       .button-primary:hover,
       .button-primary:focus {
         background: #efba5f;
         color: var(--text);
+        transform: translateY(-1px);
       }
 
       .button-secondary {
         background: rgba(255, 255, 255, 0.08);
         border: 1px solid rgba(255, 255, 255, 0.28);
         color: var(--white);
-        font-weight: 700;
-        border-radius: 8px;
-        padding: 1.1rem 1.8rem;
+        font-weight: 800;
+        border-radius: 12px;
+        padding: 1.15rem 2rem;
+        min-width: 220px;
+        transition: background 0.2s ease, transform 0.2s ease;
       }
 
       .button-secondary:hover,
@@ -125,6 +143,14 @@
         background: var(--white);
         border-radius: 10px;
         box-shadow: var(--shadow);
+      }
+
+      .section-shell {
+        background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(246,250,251,0.9));
+        border: 1px solid rgba(27, 127, 141, 0.08);
+        border-radius: 18px;
+        padding: 2rem;
+        box-shadow: 0 18px 30px rgba(16, 50, 59, 0.04);
       }
 
       .feature-box {
@@ -146,29 +172,103 @@
       }
 
       .section-title {
-        font-family: Georgia, "Times New Roman", serif;
+        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
         font-size: 2.2rem;
         line-height: 1.25;
         font-weight: 800;
         color: var(--text);
+        letter-spacing: -0.03em;
       }
 
       .service-card {
-        padding: 1.75rem;
+        padding: 1.6rem 1.5rem;
         height: 100%;
-        border: 1px solid rgba(31, 42, 55, 0.05);
+        border: 1px solid rgba(31, 42, 55, 0.06);
+        border-left: 4px solid var(--brand);
+        background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(234,247,250,0.9));
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px rgba(19, 67, 78, 0.12);
       }
 
       .service-card h3 {
         color: var(--text);
         font-size: 1.25rem;
-        font-weight: 700;
+        font-weight: 800;
         margin-bottom: 0.75rem;
       }
 
       .service-card p {
         color: var(--muted);
         line-height: 1.7;
+        margin-bottom: 0;
+      }
+
+      .benefit-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0 0;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .benefit-list li {
+        position: relative;
+        padding: 1.05rem 1.1rem 1.05rem 3.4rem;
+        background: linear-gradient(135deg, #ffffff, #edf8fa);
+        border: 1px solid rgba(27, 127, 141, 0.12);
+        border-left: 5px solid var(--brand);
+        border-radius: 12px;
+        color: var(--text);
+        font-size: 1.05rem;
+        font-weight: 800;
+        box-shadow: 0 10px 22px rgba(18, 93, 109, 0.06);
+        line-height: 1.45;
+      }
+
+      .benefit-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1.9rem;
+        height: 1.9rem;
+        border-radius: 50%;
+        background: var(--brand-dark);
+        color: var(--white);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+        font-weight: 900;
+        box-shadow: 0 6px 16px rgba(18, 93, 109, 0.2);
+      }
+
+      .booking-panel {
+        background: linear-gradient(135deg, rgba(15, 90, 104, 0.96), rgba(27, 127, 141, 0.96));
+        border-radius: 18px;
+        padding: 2rem;
+        color: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .booking-panel .title,
+      .booking-panel p,
+      .booking-panel .detail-label,
+      .booking-panel .contact-link {
+        color: var(--white);
+      }
+
+      .booking-panel .detail-label {
+        opacity: 0.9;
+      }
+
+      .booking-panel .contact-link:hover {
+        color: #dff7fb;
       }
 
       .badge {
@@ -215,21 +315,34 @@
       }
 
       .mini-stat {
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        gap: 0.8rem;
-        color: var(--text);
-        font-weight: 700;
+        gap: 0.75rem;
+        padding: 0.8rem 1rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        color: var(--white);
+        font-weight: 800;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
       }
 
       .mini-stat strong {
-        color: var(--text);
+        color: var(--white);
         font-size: 1.1rem;
       }
 
       .mini-stat span:first-child {
-        color: var(--brand-dark);
-        font-size: 1.1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        color: var(--white);
+        font-size: 0.95rem;
+        font-weight: 900;
       }
 
       .availability-box {
@@ -275,9 +388,47 @@
       }
 
       .footer-shell {
-        background: #153746;
+        background: linear-gradient(135deg, #153746 0%, #1d4658 100%);
         color: rgba(255,255,255,0.8);
-        border-radius: 10px 10px 0 0;
+        border-radius: 20px 20px 0 0;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 -18px 40px rgba(18, 52, 60, 0.08);
+      }
+
+      .footer-brand {
+        display: inline-block;
+        font-size: 1.2rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--white);
+        margin-bottom: 0.25rem;
+      }
+
+      .footer-tagline {
+        color: rgba(255,255,255,0.7);
+        margin-bottom: 0;
+      }
+
+      .footer-contact {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .footer-contact a {
+        color: var(--white);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .footer-contact a:hover {
+        color: #dff7fb;
+      }
+
+      .footer-divider {
+        color: rgba(255,255,255,0.35);
       }
 
       a:focus-visible,
@@ -301,6 +452,10 @@
       @media screen and (max-width: 768px) {
         .hero-box {
           padding: 2rem 1.25rem;
+        }
+
+        .section-shell {
+          padding: 1.2rem;
         }
 
         .hero-title {
@@ -339,11 +494,11 @@
     <section class="section py-5">
       <div class="container is-max-desktop">
         <div class="hero-box p-5 p-6-desktop">
+          <div class="brand-logo-wrap">
+            <img src="miri-uk-logo.png" alt="Miri UK Cleaning logo" class="brand-logo" loading="eager">
+          </div>
           <div class="columns is-vcentered is-variable is-6">
             <div class="column is-7">
-              <div class="brand-logo-wrap">
-                <img src="miri-uk-logo.png" alt="Miri UK Cleaning logo" class="brand-logo" loading="eager">
-              </div>
               <div class="has-text-centered">
                 <span class="hero-tag">Brighton, UK</span>
               </div>
@@ -418,34 +573,36 @@
 
     <section class="section pt-0">
       <div class="container is-max-desktop">
-        <div class="has-text-centered mb-5">
-          <span class="badge">Our services</span>
-          <h2 class="section-title mt-4">Cleaning solutions tailored to your needs</h2>
-        </div>
+        <div class="section-shell">
+          <div class="has-text-centered mb-5">
+            <span class="badge">Our services</span>
+            <h2 class="section-title mt-4">Cleaning solutions tailored to your needs</h2>
+          </div>
 
-        <div class="columns is-multiline is-variable is-5">
-          <div class="column is-half">
-            <div class="service-card">
-              <h3>Domestic cleaning</h3>
-              <p>Regular home cleaning for kitchens, bathrooms, bedrooms and living spaces, with care and consistency you can rely on.</p>
+          <div class="columns is-multiline is-variable is-5">
+            <div class="column is-half">
+              <div class="service-card">
+                <h3>Domestic cleaning</h3>
+                <p>Regular home cleaning for kitchens, bathrooms, bedrooms and living spaces, with care and consistency you can rely on.</p>
+              </div>
             </div>
-          </div>
-          <div class="column is-half">
-            <div class="service-card">
-              <h3>Airbnb & holiday let cleaning</h3>
-              <p>Keep your property guest-ready with spotless presentation, quick turnaround and attention to detail between bookings.</p>
+            <div class="column is-half">
+              <div class="service-card">
+                <h3>Airbnb & holiday let cleaning</h3>
+                <p>Keep your property guest-ready with spotless presentation, quick turnaround and attention to detail between bookings.</p>
+              </div>
             </div>
-          </div>
-          <div class="column is-half">
-            <div class="service-card">
-              <h3>End of tenancy cleaning</h3>
-              <p>Detailed cleaning for tenants moving out, helping properties look presentation-ready for inspection and handover.</p>
+            <div class="column is-half">
+              <div class="service-card">
+                <h3>End of tenancy cleaning</h3>
+                <p>Detailed cleaning for tenants moving out, helping properties look presentation-ready for inspection and handover.</p>
+              </div>
             </div>
-          </div>
-          <div class="column is-half">
-            <div class="service-card">
-              <h3>Commercial cleaning</h3>
-              <p>Professional cleaning for workspaces and small commercial premises, helping businesses maintain a clean, polished environment.</p>
+            <div class="column is-half">
+              <div class="service-card">
+                <h3>Commercial cleaning</h3>
+                <p>Professional cleaning for workspaces and small commercial premises, helping businesses maintain a clean, polished environment.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -454,23 +611,25 @@
 
     <section class="section pt-0">
       <div class="container is-max-desktop">
-        <div class="columns is-variable is-5 is-vcentered">
-          <div class="column is-6">
-            <span class="badge">Why clients choose us</span>
-            <h2 class="section-title mt-4">Professional, friendly and dependable</h2>
-            <ul class="content mt-5" style="color: var(--text); font-weight: 600;">
-              <li>Flexible appointments to suit your week</li>
-              <li>Thorough, high-standard cleaning every visit</li>
-              <li>Friendly service with a personal touch</li>
-              <li>Serving Brighton and surrounding areas</li>
-            </ul>
-          </div>
-          <div class="column is-6">
-            <div class="contact-card">
-              <h3 class="title is-5 mb-4">Book a clean</h3>
-              <p class="mb-4">Looking for a cleaner you can trust? Contact Mirgian for a quote or to arrange a cleaning visit.</p>
-              <p class="mb-2"><span class="detail-label">Call:</span> <a class="contact-link" href="tel:07513752040">07513752040</a></p>
-              <p><span class="detail-label">Email:</span> <a class="contact-link" href="mailto:inter.86@hotmail.gr">inter.86@hotmail.gr</a></p>
+        <div class="section-shell">
+          <div class="columns is-variable is-5 is-vcentered">
+            <div class="column is-6">
+              <span class="badge">Why clients choose us</span>
+              <h2 class="section-title mt-4">Professional, friendly and dependable</h2>
+              <ul class="benefit-list">
+                <li>Flexible appointments to suit your week</li>
+                <li>Thorough, high-standard cleaning every visit</li>
+                <li>Friendly service with a personal touch</li>
+                <li>Serving Brighton and surrounding areas</li>
+              </ul>
+            </div>
+            <div class="column is-6">
+              <div class="booking-panel">
+                <h3 class="title is-5 mb-4">Book a clean</h3>
+                <p class="mb-4">Looking for a cleaner you can trust? Contact Mirgian for a quote or to arrange a cleaning visit.</p>
+                <p class="mb-2"><span class="detail-label">Call:</span> <a class="contact-link" href="tel:07513752040">07513752040</a></p>
+                <p><span class="detail-label">Email:</span> <a class="contact-link" href="mailto:inter.86@hotmail.gr">inter.86@hotmail.gr</a></p>
+              </div>
             </div>
           </div>
         </div>
@@ -481,13 +640,15 @@
       <div class="container is-max-desktop py-5">
         <div class="columns is-vcentered">
           <div class="column">
-            <p class="has-text-white has-text-weight-semibold mb-1">Mirgian Chasanllari</p>
-            <p>Brighton, East Sussex, UK</p>
+            <p class="footer-brand">Mirgian Chasanllari</p>
+            <p class="footer-tagline">Brighton, East Sussex, UK</p>
           </div>
           <div class="column has-text-right">
-            <a class="has-text-white" href="tel:07513752040">07513752040</a>
-            <span class="mx-3">|</span>
-            <a class="has-text-white" href="mailto:inter.86@hotmail.gr">inter.86@hotmail.gr</a>
+            <div class="footer-contact">
+              <a href="tel:07513752040">07513752040</a>
+              <span class="footer-divider">|</span>
+              <a href="mailto:inter.86@hotmail.gr">inter.86@hotmail.gr</a>
+            </div>
           </div>
         </div>
       </div>
