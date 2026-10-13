@@ -38,6 +38,25 @@
         box-shadow: var(--shadow);
       }
 
+      .brand-logo-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.2rem;
+      }
+
+      .brand-logo {
+        display: block;
+        max-width: 220px;
+        width: 100%;
+        height: auto;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 0.55rem;
+        box-shadow: 0 12px 26px rgba(10, 33, 40, 0.18);
+        margin: 0 auto;
+      }
+
       .hero-tag {
         display: inline-flex;
         padding: 0.5rem 0.9rem;
@@ -304,8 +323,13 @@
         <div class="hero-box p-5 p-6-desktop">
           <div class="columns is-vcentered is-variable is-6">
             <div class="column is-7">
-              <span class="hero-tag">Brighton, UK</span>
-              <h1 class="hero-title mt-4">Fresh, reliable cleaning for homes and short-stay properties.</h1>
+              <div class="brand-logo-wrap">
+                <img src="miri-uk-logo.png" alt="Miri UK Cleaning logo" class="brand-logo" loading="eager">
+              </div>
+              <div class="has-text-centered">
+                <span class="hero-tag">Brighton, UK</span>
+              </div>
+              <h1 class="hero-title mt-4 has-text-centered">Fresh, reliable cleaning for homes and short-stay properties.</h1>
               <p class="hero-subtitle mt-4">
                 Professional cleaning services designed for busy households, landlords and Airbnb hosts who want spotless results with a friendly, trustworthy touch.
               </p>
