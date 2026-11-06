@@ -63,6 +63,24 @@
         margin: 0 auto;
       }
 
+      .about-photo-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        min-height: 360px;
+        overflow: hidden;
+        border-radius: 18px;
+        background: linear-gradient(160deg, var(--brand-soft), rgba(245, 199, 127, 0.24));
+      }
+
+      .about-photo {
+        display: block;
+        width: 100%;
+        max-height: 460px;
+        object-fit: contain;
+        object-position: center bottom;
+      }
+
       .hero-tag {
         display: inline-flex;
         padding: 0.5rem 0.9rem;
@@ -466,6 +484,14 @@
           font-size: 1.8rem;
         }
 
+        .about-photo-wrap {
+          min-height: 0;
+        }
+
+        .about-photo {
+          max-height: 360px;
+        }
+
         .button-primary,
         .button-secondary {
           width: 100%;
@@ -537,6 +563,25 @@
                 </div>
                 <a class="google-map-link" href="https://www.google.com/maps/place/Miri+Cleaning+Services/data=!4m2!3m1!1s0x0:0xbb7dd851aff952c8?sa=X&ved=1t:2428&ictx=111&cshid=1791754992534816" target="_blank" rel="noopener noreferrer">📍 View on Google Maps</a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pt-0">
+      <div class="container is-max-desktop">
+        <div class="section-shell">
+          <div class="columns is-vcentered is-variable is-6">
+            <div class="column is-5">
+              <div class="about-photo-wrap">
+                <img src="miri.png" alt="Mirgian Chasanllari" class="about-photo" loading="lazy">
+              </div>
+            </div>
+            <div class="column is-7">
+              <span class="badge">A personal touch</span>
+              <h2 class="section-title mt-4">Meet Miri</h2>
+              <p>Hi, I’m Mirgian. I provide friendly, reliable cleaning across Brighton, with care and attention to detail in every home and property I look after.</p>
             </div>
           </div>
         </div>
